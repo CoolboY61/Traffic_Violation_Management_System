@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0"
+         metadata-complete="true">
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- 字符编码过滤器 -->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>com.liu.filter.CharacterEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- 登录权限过滤器 -->
+    <filter>
+        <filter-name>SysFilter</filter-name>
+        <filter-class>com.liu.filter.SysFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SysFilter</filter-name>
+        <url-pattern>/sys/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Driver登录 -->
+    <servlet>
+        <servlet-name>LoginDriverServlet</servlet-name>
+        <servlet-class>com.liu.controller.LoginDriverServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginDriverServlet</servlet-name>
+        <url-pattern>/driverlogin</url-pattern>
+    </servlet-mapping>
+    <!-- Driver注册 -->
+    <servlet>
+        <servlet-name>AddDriverServlet</servlet-name>
+        <servlet-class>com.liu.controller.driver.AddDriverServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddDriverServlet</servlet-name>
+        <url-pattern>/addDriver</url-pattern>
+    </servlet-mapping>
+    <!-- 修改Driver信息 -->
+    <servlet>
+        <servlet-name>UpdateDriverServlet</servlet-name>
+        <servlet-class>com.liu.controller.driver.UpdateDriverServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateDriverServlet</servlet-name>
+        <url-pattern>/driver/update</url-pattern>
+    </servlet-mapping>
+    <!-- 删除Driver -->
+    <servlet>
+        <servlet-name>DeleteDriverServlet</servlet-name>
+        <servlet-class>com.liu.controller.driver.DeleteDriverServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteDriverServlet</servlet-name>
+        <url-pattern>/driver/delete</url-pattern>
+    </servlet-mapping>
+    <!-- 查询单个Driver -->
+    <servlet>
+        <servlet-name>SelectDriverServlet</servlet-name>
+        <servlet-class>com.liu.controller.driver.SelectDriverServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectDriverServlet</servlet-name>
+        <url-pattern>/driver/select</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Policemen登录 -->
+    <servlet>
+        <servlet-name>LoginPolicemenServlet</servlet-name>
+        <servlet-class>com.liu.controller.LoginPolicemenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginPolicemenServlet</servlet-name>
+        <url-pattern>/policemenlogin</url-pattern>
+    </servlet-mapping>
+    <!-- Policemen注册-->
+    <servlet>
+        <servlet-name>AddPolicemenServlet</servlet-name>
+        <servlet-class>com.liu.controller.policemen.AddPolicemenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddPolicemenServlet</servlet-name>
+        <url-pattern>/addPolicemen</url-pattern>
+    </servlet-mapping>
+    <!-- 修改Policemen信息 -->
+    <servlet>
+        <servlet-name>UpdatePolicemenServlet</servlet-name>
+        <servlet-class>com.liu.controller.policemen.UpdatePolicemenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdatePolicemenServlet</servlet-name>
+        <url-pattern>/policemen/update</url-pattern>
+    </servlet-mapping>
+    <!-- 删除Policemen -->
+    <servlet>
+        <servlet-name>DeletePolicemenServlet</servlet-name>
+        <servlet-class>com.liu.controller.policemen.DeletePolicemenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletePolicemenServlet</servlet-name>
+        <url-pattern>/policemen/delete</url-pattern>
+    </servlet-mapping>
+    <!-- 查询单个Policemen -->
+    <servlet>
+        <servlet-name>SelectPolicemenServlet</servlet-name>
+        <servlet-class>com.liu.controller.policemen.SelectPolicemenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectPolicemenServlet</servlet-name>
+        <url-pattern>/policemen/select</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Car添加 -->
+    <servlet>
+        <servlet-name>AddCarServlet</servlet-name>
+        <servlet-class>com.liu.controller.car.AddCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCarServlet</servlet-name>
+        <url-pattern>/driver/car/add</url-pattern>
+    </servlet-mapping>
+    <!-- 修改Car信息 -->
+    <servlet>
+        <servlet-name>UpdateCarServlet</servlet-name>
+        <servlet-class>com.liu.controller.car.UpdateCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateCarServlet</servlet-name>
+        <url-pattern>/driver/car/update</url-pattern>
+    </servlet-mapping>
+    <!-- 删除Car -->
+    <servlet>
+        <servlet-name>DeleteCarServlet</servlet-name>
+        <servlet-class>com.liu.controller.car.DeleteCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCarServlet</servlet-name>
+        <url-pattern>/driver/car/delete</url-pattern>
+    </servlet-mapping>
+    <!-- 查询单个Car -->
+    <servlet>
+        <servlet-name>SelectCarServlet</servlet-name>
+        <servlet-class>com.liu.controller.car.SelectCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectCarServlet</servlet-name>
+        <url-pattern>/driver/car/select</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Ticket添加 -->
+    <servlet>
+        <servlet-name>AddTicketServlet</servlet-name>
+        <servlet-class>com.liu.controller.ticket.AddTicketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddTicketServlet</servlet-name>
+        <url-pattern>/ticket/add</url-pattern>
+    </servlet-mapping>
+    <!-- 修改Ticket信息 -->
+    <servlet>
+        <servlet-name>UpdateTicketServlet</servlet-name>
+        <servlet-class>com.liu.controller.ticket.UpdateTicketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateTicketServlet</servlet-name>
+        <url-pattern>/ticket/update</url-pattern>
+    </servlet-mapping>
+    <!-- 删除Ticket -->
+    <servlet>
+        <servlet-name>DeleteTicketServlet</servlet-name>
+        <servlet-class>com.liu.controller.ticket.DeleteTicketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteTicketServlet</servlet-name>
+        <url-pattern>/ticket/delete</url-pattern>
+    </servlet-mapping>
+    <!-- 查询单个Ticket -->
+    <servlet>
+        <servlet-name>SelectTicketServlet</servlet-name>
+        <servlet-class>com.liu.controller.ticket.SelectTicketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SelectTicketServlet</servlet-name>
+        <url-pattern>/ticket/select</url-pattern>
+    </servlet-mapping>
+
+    <!-- 注销 -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.liu.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+</web-app>
